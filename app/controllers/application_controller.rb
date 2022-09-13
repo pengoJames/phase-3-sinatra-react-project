@@ -58,10 +58,10 @@ class ApplicationController < Sinatra::Base
     buyer.to_json
   end
 
-  # delete '/items/:id' do 
-  #   item = Item.find(params[:id])
-  #   item.destroy
-  #   item.to_json
-  # end
+  delete '/items/:id' do 
+    item = Item.find(params[:id])
+    item.destroy
+    item.to_json
+  end
 
 end
