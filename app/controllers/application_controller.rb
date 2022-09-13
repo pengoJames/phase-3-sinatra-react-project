@@ -50,13 +50,13 @@ class ApplicationController < Sinatra::Base
     item.to_json
   end
 
-  # patch '/buyers/:id' do 
-  #   buyer = Buyer.find(params[:id])
-  #   buyer.update(
-  #     location: params[:location]
-  #   )
-  #   buyer.to_json
-  # end
+  patch '/buyers/:id' do 
+    buyer = Buyer.find(params[:id])
+    buyer.update(
+      location: params[:location]
+    )
+    buyer.to_json
+  end
 
   # delete '/items/:id' do 
   #   item = Item.find(params[:id])
