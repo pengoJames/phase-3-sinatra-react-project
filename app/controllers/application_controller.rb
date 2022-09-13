@@ -21,16 +21,16 @@ class ApplicationController < Sinatra::Base
     buyer.to_json 
   end
 
-  # post '/items' do 
-  #   item = Item.create(
-  #     name: params[:name],
-  #     category: params[:category],
-  #     price: params[:price],
-  #     isincart: params[:isincart],
-  #     buyer_id: params[:buyer_id]
-  #   )
-  #   item.to_json
-  # end
+  post '/items' do 
+    item = Item.create(
+      name: params[:name],
+      category: params[:category],
+      price: params[:price],
+      isincart: params[:isincart],
+      buyer_id: params[:buyer_id]
+    )
+    item.to_json
+  end
 
   # post '/buyers' do 
   #   buyer = Buyer.create(
