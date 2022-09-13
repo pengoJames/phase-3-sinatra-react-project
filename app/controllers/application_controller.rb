@@ -11,15 +11,15 @@ class ApplicationController < Sinatra::Base
     items.to_json
   end
 
-  # get '/items/:id' do 
-  #   item = Item.find(params[:id])
-  #   item.to_json(include: buyer)
-  # end
+  get '/items/:id' do 
+    item = Item.find(params[:id])
+    item.to_json(include: buyer)
+  end
 
-  # get '/buyers' do 
-  #   buyer = Buyer.all
-  #   buyer.to_json 
-  # end
+  get '/buyers' do 
+    buyer = Buyer.all
+    buyer.to_json 
+  end
 
   # post '/items' do 
   #   item = Item.create(
