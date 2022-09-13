@@ -32,13 +32,13 @@ class ApplicationController < Sinatra::Base
     item.to_json
   end
 
-  # post '/buyers' do 
-  #   buyer = Buyer.create(
-  #     name: params[:name],
-  #     location: params[:location]
-  #  )
-  #  buyer.to_json
-  # end
+  post '/buyers' do 
+    buyer = Buyer.create(
+      name: params[:name],
+      location: params[:location]
+   )
+   buyer.to_json
+  end
 
   # patch '/items/:id' do 
   #   item = Item.find(params[:id])
