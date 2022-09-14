@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_13_125614) do
+ActiveRecord::Schema.define(version: 2022_09_14_161119) do
 
   create_table "buyers", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2022_09_13_125614) do
     t.string "name"
     t.string "category"
     t.integer "price"
-    t.boolean "isincart"
     t.string "buyer_id"
   end
 
