@@ -2,9 +2,9 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
   # Add your routes here
-  get "/" do
-    { message: "Good luck with your project!" }.to_json
-  end
+  # get "/" do
+  #   { message: "Good luck with your project!" }.to_json
+  # end
 
   get '/items' do 
     items = Item.all 
@@ -26,7 +26,6 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       category: params[:category],
       price: params[:price],
-      isincart: params[:isincart],
       buyer_id: params[:buyer_id]
     )
     item.to_json
