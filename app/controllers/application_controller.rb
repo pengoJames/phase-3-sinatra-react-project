@@ -6,19 +6,24 @@ class ApplicationController < Sinatra::Base
   #   { message: "Good luck with your project!" }.to_json
   # end
 
+  get '/buyers' do 
+    buyer = Buyer.all 
+    buyer.to_json(include: :items)
+  end
+
+  get '/buyers/:id' do 
+    buyer = Buyer.find(params[:id])
+    buyer.to_json(include: :items)
+  end
+
   get '/items' do 
-    items = Item.all 
-    items.to_json
+    item = Item.all
+    item.to_json 
   end
 
   get '/items/:id' do 
     item = Item.find(params[:id])
-    item.to_json(include: buyer)
-  end
-
-  get '/buyers' do 
-    buyer = Buyer.all
-    buyer.to_json 
+    item.to_json
   end
 
   post '/items' do 
@@ -26,7 +31,7 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       category: params[:category],
       price: params[:price],
-      buyer_id: params[:buyer_id]
+      buyer_id: params[:buyer_id]   
     )
     item.to_json
   end
@@ -42,7 +47,6 @@ class ApplicationController < Sinatra::Base
   patch '/items/:id' do 
     item = Item.find(params[:id])
     item.update(
-      name: params[:name],
       category: params[:category],
       price: params[:price]
     )
@@ -61,6 +65,12 @@ class ApplicationController < Sinatra::Base
     item = Item.find(params[:id])
     item.destroy
     item.to_json
+  end
+
+  delete '/buyers/:id' do 
+    buyer = Buyer.find(params[:id])
+    buyer.destroy
+    buyer.to_json
   end
 
 end
